@@ -6,8 +6,50 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: orange;
 }
-
+main {
+  display: flex;
+  flex-direction: column;
+}
 #button {
   width: 300px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+input {
+  width: 50%;
+  margin: 0 auto;
+}
+
+input:focus {
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin: 30px;
+  color: white;
+}
+
+#albumList {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.albumClass {
+  width: 30%;
+  list-style-type: none;
+  border: 1px solid orange;
+  margin: 0 auto;
+}
+
+.albumImage {
+  max-width: 100%;
+}
+
+.albumName {
 }

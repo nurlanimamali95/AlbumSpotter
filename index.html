@@ -14,9 +14,13 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Find Your Music</h1>
-    <input type="text" name="" id="search" />
-    <button id="button">Press!</button>
+    <main class="main">
+      <h1>Explore your music</h1>
+      <input type="text" name="" id="artistName" />
+      <button id="button" onclick="searchArtist()">Press!</button>
+      <div id="albumList"></div>
+      <ul id="trackList"></ul>
+    </main>
     <script src="./src/app.js"></script>
   </body>
 </html>
