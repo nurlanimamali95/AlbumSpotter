@@ -6,7 +6,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: orange;
+  background-color: #b3c890;
 }
 main {
   display: flex;
@@ -31,7 +31,6 @@ input:focus {
 h1 {
   text-align: center;
   margin: 30px;
-  color: white;
 }
 
 #albumList {
@@ -40,16 +39,115 @@ h1 {
   flex-wrap: wrap;
 }
 
-.albumClass {
+.albums {
   width: 30%;
   list-style-type: none;
-  border: 1px solid orange;
   margin: 0 auto;
 }
 
 .albumImage {
   max-width: 100%;
+  cursor: pointer;
+  border-radius: 8px;
+  filter: grayscale(1);
+  transition: 0.3s linear;
 }
 
-.albumName {
+.albumImage:hover {
+  filter: grayscale(0);
+}
+
+.trackList {
+  scroll-behavior: auto;
+  list-style: none;
+}
+
+#overlay {
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+#trackListContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 60%;
+  overflow-y: scroll;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+#trackListContainer::-webkit-scrollbar {
+  width: 10px;
+}
+
+#trackListContainer::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#trackListContainer::-webkit-scrollbar-thumb {
+  background-color: orange;
+  border-radius: 3px;
+}
+
+iframe {
+  width: 100%;
+  max-width: 100%;
+}
+
+.closeButton {
+  color: black;
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 50px;
+  height: 50px;
+  text-align: center;
+  width: 150px;
+  cursor: pointer;
+}
+
+.closeButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.closeButton::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(159, 161, 27, 0.1);
+}
+.closeButton:hover {
+  background-color: orange;
+}
+.closeButton:hover::before {
+  transform: rotate(-45deg);
+  background-color: rgba(255, 255, 255, 0);
+}
+.closeButton:hover::after {
+  transform: rotate(45deg);
+  background-color: rgba(255, 255, 255, 0);
 }

@@ -30,16 +30,14 @@ function searchArtist() {
         .then((data) => {
           // Display the artist's albums in the UI
           const albums = data.albums.items;
-          console.log(albums);
           const albumList = document.getElementById("albumList");
           albumList.innerHTML = "";
           albums.forEach((album) => {
             const albumItem = document.createElement("li");
-            albumItem.classList.add("albumClass");
+            albumItem.classList.add("albums");
             // Create a div for the tracklist inside the album item
             const trackListContainer = document.createElement("div");
             trackListContainer.classList.add("trackListContainer");
-            trackListContainer.style.overflow = "auto";
 
             albumItem.innerHTML = `
               <img class="albumImage" src="${album.images[0].url}" alt="${album.name} cover">
@@ -62,7 +60,6 @@ function searchArtist() {
                 .then((response) => response.json())
                 .then((data) => {
                   const trackList = data.items;
-                  console.log(trackList);
                   const trackListElement = document.createElement("ul"); // Create a new UL element for the tracklist
                   trackListElement.classList.add("trackList");
                   trackList.forEach((track) => {
@@ -70,7 +67,7 @@ function searchArtist() {
                     trackItem.classList.add("trackClass");
                     trackItem.innerHTML = `
                       <iframe src="https://open.spotify.com/embed/track/${track.id}"
-                        width="300"
+                        width="600"
                         height="80"
                         frameborder="0"
                         allowtransparency="true"
@@ -78,8 +75,36 @@ function searchArtist() {
                     `;
                     trackListElement.appendChild(trackItem);
                   });
-                  // Append the tracklist to the container inside the album item
+                  // Display the overlay and add the tracklist to the "trackListContainer" div
+                  const overlay = document.getElementById("overlay");
+                  overlay.style.display = "block";
+                  const trackListContainer =
+                    document.getElementById("trackListContainer");
+                  trackListContainer.innerHTML = "";
                   trackListContainer.appendChild(trackListElement);
+
+                  // Create close button
+                  const closeButton = document.createElement("button");
+                  closeButton.innerText = "BACK";
+                  closeButton.classList.add("closeButton");
+
+                  // Add click event listener to close button
+                  closeButton.addEventListener("click", () => {
+                    // Stop the currently playing track, if any
+                    const iframe = trackListElement.querySelector("iframe");
+                    if (iframe) {
+                      iframe.contentWindow.postMessage(
+                        '{"event":"command","func":"stop","args":""}',
+                        "*"
+                      );
+                    }
+                    // Hide the overlay
+                    overlay.style.display = "none";
+                    closeButton.remove();
+                  });
+
+                  // Append close button to overlay
+                  overlay.appendChild(closeButton);
                 })
                 .catch((error) => console.error(error));
             });
