@@ -92,12 +92,7 @@ function searchArtist() {
                   closeButton.addEventListener("click", () => {
                     // Stop the currently playing track, if any
                     const iframe = trackListElement.querySelector("iframe");
-                    if (iframe) {
-                      iframe.contentWindow.postMessage(
-                        '{"event":"command","func":"stop","args":""}',
-                        "*"
-                      );
-                    }
+
                     // Hide the overlay
                     overlay.style.display = "none";
                     closeButton.remove();

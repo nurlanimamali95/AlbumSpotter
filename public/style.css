@@ -6,7 +6,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #b3c890;
+  background-color: #ccf656;
 }
 main {
   display: flex;
@@ -17,11 +17,56 @@ main {
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 30px;
+  height: 40px;
+  color: grey;
+  transition: all 0.5s;
+  position: relative;
+  line-height: 50px;
+  height: 50px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #ccf656;
+  border: none;
+}
+
+#button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+}
+#button:hover::before {
+  opacity: 0;
+  transform: scale(0.5, 0.5);
+}
+#button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  transform: scale(1.2, 1.2);
+}
+#button:hover::after {
+  opacity: 1;
+  transform: scale(1, 1);
 }
 
 input {
-  width: 50%;
+  width: 40%;
+  height: 5vh;
   margin: 0 auto;
+  border-radius: 10px;
 }
 
 input:focus {
@@ -30,7 +75,8 @@ input:focus {
 
 h1 {
   text-align: center;
-  margin: 30px;
+  margin: 50px;
+  margin-top: 50px;
 }
 
 #albumList {
@@ -43,6 +89,8 @@ h1 {
   width: 30%;
   list-style-type: none;
   margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .albumImage {
@@ -57,6 +105,9 @@ h1 {
   filter: grayscale(0);
 }
 
+.albumName {
+  text-align: center;
+}
 .trackList {
   scroll-behavior: auto;
   list-style: none;
