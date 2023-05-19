@@ -1,5 +1,14 @@
 function searchArtist() {
   const query = document.getElementById("artistName").value;
+  const errorMessage = document.getElementById("errorMessage");
+
+  if (query === "") {
+    errorMessage.style.display = "block";
+    return;
+  }
+
+  errorMessage.style.display = "none";
+
   fetch("https://accounts.spotify.com/api/token", {
     method: "POST",
     headers: {
@@ -103,5 +112,6 @@ function searchArtist() {
             albumList.appendChild(albumItem);
           });
         });
-    });
+    })
+    .catch((error) => console.error(error));
 }
