@@ -1,5 +1,5 @@
 function searchArtist() {
-  const artistName = document.getElementById("artistName").value;
+  const query = document.getElementById("artistName").value;
   fetch("https://accounts.spotify.com/api/token", {
     method: "POST",
     headers: {
@@ -17,15 +17,12 @@ function searchArtist() {
     .then((response) => response.json())
     .then((data) => {
       const accessToken = data.access_token;
-      fetch(
-        `https://api.spotify.com/v1/search?q=artist:${artistName}&type=album`,
-        {
-          method: "GET",
-          headers: {
-            Authorization: "Bearer " + accessToken,
-          },
-        }
-      )
+      fetch(`https://api.spotify.com/v1/search?q=${query}&type=album`, {
+        method: "GET",
+        headers: {
+          Authorization: "Bearer " + accessToken,
+        },
+      })
         .then((response) => response.json())
         .then((data) => {
           // Display the artist's albums in the UI
