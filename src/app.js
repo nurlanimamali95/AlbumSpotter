@@ -3,7 +3,7 @@ function searchArtist() {
   const errorMessage = document.getElementById("errorMessage");
 
   if (query === "") {
-    errorMessage.style.display = "block";
+    (albumList.innerHTML = ""), (errorMessage.style.display = "block");
     return;
   }
 
@@ -37,7 +37,6 @@ function searchArtist() {
           // Display the artist's albums in the UI
           const albums = data.albums.items;
           const albumList = document.getElementById("albumList");
-          albumList.innerHTML = "";
           albums.forEach((album) => {
             const albumItem = document.createElement("li");
             albumItem.classList.add("albums");

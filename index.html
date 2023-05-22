@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./public/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/x-icon" href="./assests/favicon.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;1,500&display=swap"
       rel="stylesheet"
@@ -14,24 +15,27 @@
     <title>Document</title>
   </head>
   <body>
+    <a href="#top" id="backToTop">Back to Top</a>
     <main class="main">
-      <h1>Explore your Favourite Album!</h1>
+      <h1>Explore your Favorite Album</h1>
       <input
         type="text"
         name=""
         id="artistName"
-        placeholder="Enter artist or album name..."
+        placeholder="Discover hidden gems by artist or album!..."
       />
-      <button id="button" onclick="searchArtist()">SEARCH</button>
+      <button id="searchButton" onclick="searchArtist()">SEARCH</button>
       <div id="albumList"></div>
       <h3 id="errorMessage" class="tracking-in-expand">
         Please enter an artist or album name.
       </h3>
+      <span class="goBack"></span>
     </main>
     <div id="overlay">
       <ul id="trackList"></ul>
       <div id="trackListContainer"></div>
     </div>
     <script src="./src/app.js"></script>
+    <script src="./src/bodyColorChange.js"></script>
   </body>
 </html>
