@@ -4,6 +4,8 @@ import {
   fetchAlbumTracks,
 } from "../src/API/api.js";
 
+import { createOverlay } from "../src/pages/overlay.js";
+
 const searchArtist = () => {
   const query = document.getElementById("artistName").value;
   const errorMessage = document.getElementById("errorMessage");
@@ -62,24 +64,7 @@ const searchArtist = () => {
                 `;
                 trackListElement.appendChild(trackItem);
               });
-
-              const overlay = document.getElementById("overlay");
-              overlay.style.display = "block";
-              const trackListContainer =
-                document.getElementById("trackListContainer");
-              trackListContainer.innerHTML = "";
-              trackListContainer.appendChild(trackListElement);
-
-              const closeButton = document.createElement("button");
-              closeButton.innerText = "BACK";
-              closeButton.classList.add("closeButton");
-
-              closeButton.addEventListener("click", () => {
-                overlay.style.display = "none";
-                closeButton.remove();
-              });
-
-              overlay.appendChild(closeButton);
+              createOverlay(trackListElement);
             })
             .catch((error) => console.error(error));
         });
