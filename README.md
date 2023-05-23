@@ -34,7 +34,7 @@ README.md
 
 - `assets` || images that were used in the app and also in README.md
 - `public` || css file for styling the whole page
-  `src` || It contains two folders API and pages
+- `src` || It contains two folders API and pages
 - `API` || As you already understood, this folder for APIs. I created fetch in three different functions, so it is easy to access them later. There is one file inside of this folder which is `api.js`
 - `pages` || JS files that handles errors, apply styles and add components
 - `app.js` || The main JS file that connected directly to `index.html` and imports the other modules.
