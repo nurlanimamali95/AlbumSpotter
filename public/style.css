@@ -65,7 +65,7 @@ main {
 #searchButton:hover {
   background-color: #d4d4d4;
   color: transparent;
-  background-image: url("../assests/search.png");
+  background-image: url("../assets/search.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 2em 2em;
@@ -296,7 +296,7 @@ iframe {
   #searchButton:hover {
     background-color: rgb(243, 155, 53);
     color: transparent;
-    background-image: url("../assests/search.png");
+    background-image: url("../assets/search.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 2em 2em;
@@ -360,7 +360,7 @@ iframe {
   #searchButton:hover {
     background-color: rgb(243, 155, 53);
     color: transparent;
-    background-image: url("../assests/search.png");
+    background-image: url("../assets/search.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 2em 2em;
