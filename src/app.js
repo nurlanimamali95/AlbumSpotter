@@ -43,6 +43,7 @@ const searchArtist = () => {
           const trackListContainer = document.createElement("div");
           trackListContainer.classList.add("trackListContainer");
 
+          // Creating HTML structure for each album item
           albumItem.innerHTML = `
             <img class="albumImage" src="${album.images[0].url}" alt="${album.name} cover">
             <div class="albumName">
@@ -56,6 +57,8 @@ const searchArtist = () => {
           albumList.appendChild(albumItem);
 
           internetFailed(albumItem);
+
+          // Creating the track list for each Album
 
           albumItem.addEventListener("click", () => {
             fetchAlbumTracks(album.id, accessToken)
