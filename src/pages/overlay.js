@@ -12,6 +12,7 @@ export function createOverlay(trackListElement) {
   closeButton.addEventListener("click", () => {
     overlay.style.display = "none";
     closeButton.remove();
+    trackListContainer.innerHTML = "";
   });
 
   overlay.appendChild(closeButton);
