@@ -7,7 +7,7 @@
 
 AlbumSpotter is a cutting-edge Single Page Application (SPA) designed to fulfill all your music discovery and listening needs. With a seamless and intuitive user interface, AlbumSpotter allows you to explore and find your favorite albums by album name or artist name, while also providing the ability to listen to songs from those albums. It's the perfect platform for music enthusiasts who want to dive deep into their favorite artists' discographies or discover new albums from talented musicians across various genres.
 
-[Click here for the Demo version]([https://nurlanimamali95.github.io/APIproject/](https://nurlanimamali95.github.io/AlbumSpotter/))
+[Click here for the Demo version](https://nurlanimamali95.github.io/AlbumSpotter/)
 
 ## Code structure
 
