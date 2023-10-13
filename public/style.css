@@ -74,7 +74,7 @@ main {
 
 input {
   width: 40%;
-  height: 5vh;
+  height: 50px;
   margin: 0 auto;
   border-radius: 10px;
 }
